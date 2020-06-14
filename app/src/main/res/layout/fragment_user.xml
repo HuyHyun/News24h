@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/layoutmain"
+    android:layout_height="match_parent">
+
+    <com.facebook.login.widget.ProfilePictureView
+        android:id="@+id/friendProfilePicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+
+    <com.facebook.login.widget.LoginButton xmlns:facebook="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/friendProfilePicture"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        facebook:com_facebook_login_text="Đăng nhập bằng Facebook" />
+
+    <TextView
+        android:id="@+id/nameFacebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/friendProfilePicture"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Name"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btnDangxuat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameFacebook"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:text="Đăng xuất" />
+    <View
+
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:id="@+id/viewBolder"
+        android:layout_below="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#c0c0c0"/>
+
+    <Button
+        android:id="@+id/lichsu"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/viewBolder"
+        android:layout_margin="5dp"
+        android:background="@null"
+        android:drawableStart="@drawable/time"
+        android:drawablePadding="15dp"
+        android:paddingLeft="10dp"
+        android:text="Lịch sử"
+        android:textAlignment="viewStart"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/tindaluu"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/lichsu"
+        android:layout_margin="5dp"
+        android:background="@null"
+        android:drawableStart="@drawable/bookmark_light"
+        android:drawablePadding="10dp"
+        android:paddingLeft="7dp"
+        android:text="Tin đã lưu"
+        android:textAlignment="viewStart"
+        android:textSize="14sp" />
+
+    <Switch
+        android:id="@+id/bandem"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/tindaluu"
+        android:layout_margin="5dp"
+        android:drawableStart="@drawable/moon"
+        android:drawablePadding="15dp"
+        android:paddingLeft="10dp"
+        android:text="BAN ĐÊM"
+        android:textAlignment="textStart"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btngopy"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/bandem"
+        android:layout_margin="5dp"
+        android:background="@null"
+        android:drawableLeft="@drawable/gmail"
+        android:drawablePadding="15dp"
+        android:paddingLeft="10dp"
+        android:text="Góp Ý"
+        android:textAlignment="textStart"
+        android:textSize="14sp" />
+    <View
+        android:layout_margin="5dp"
+        android:id="@+id/viewBolders"
+        android:layout_below="@+id/btngopy"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#c0c0c0"/>
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/viewBolders"
+        android:layout_margin="15dp"
+        android:text="Copyright HDQ\nĐại Học Giao Thông Vận Tải Tp HCM\nKhoa Công Nghệ Thông Tin\nPhiên bản 2.0.0"
+        android:textSize="15sp" />
+
+
+</RelativeLayout>

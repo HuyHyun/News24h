@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity=""
+    tools:context=".DetailActivity">
+
+    <RelativeLayout
+        android:id="@+id/titles"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+
+        <ImageButton
+            android:id="@+id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:src="@drawable/back" />
+
+
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/imgBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvCategory"
+
+            android:textStyle="bold"
+            android:textColor="@color/background"
+            android:textSize="22sp"/>
+
+        <ImageButton
+            android:id="@+id/imgSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/imgShare"
+            android:background="@null"
+            android:src="@drawable/bookmark" />
+
+        <ImageButton
+            android:id="@+id/imgShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="15dp"
+            android:background="@null"
+            android:src="@drawable/share" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/viewBolder"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/titles"
+        android:background="#c0c0c0" />
+
+    <RelativeLayout
+        android:id="@+id/rlWebview"
+        android:layout_above="@id/rlComment"
+        android:layout_below="@id/viewBolder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/webload"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="WebViewLayout">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:id="@+id/title_post"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="7dp"
+                    android:text="Tiêu đề bài viết"
+                    android:textSize="26sp" />
+
+
+                <TextView
+                    android:text="Nguồn"
+                    android:id="@+id/tv_source"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="17sp"
+                    android:textStyle="italic|bold"
+                    android:layout_below="@id/title_post"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#03A9F4"
+                    />
+
+
+                <TextView
+                    android:layout_marginRight="10dp"
+                    android:textColor="#E91E63"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:id="@+id/tv_link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bài viết gốc"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@id/title_post"/>
+                <WebView
+                    android:layout_below="@id/tv_link"
+                    android:id="@+id/web"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:forceDarkAllowed="true"
+                    />
+
+                <View
+                    android:id="@+id/vBolder"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/web"
+                    android:background="#c0c0c0" />
+
+                <androidx.recyclerview.widget.RecyclerView
+
+                    android:layout_below="@id/vBolder"
+                    android:id="@+id/rv_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlComment"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+
+
+
+        <EditText
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"
+            android:background="@drawable/cutsom_edit_text"
+            android:id="@+id/edit_comment"
+            android:layout_width="350dp"
+            android:maxLines="3"
+            android:layout_marginBottom="3dp"
+            android:layout_height="wrap_content"
+            android:hint="comment ở đây" />
+
+        <ImageButton
+            android:background="@null"
+            android:layout_alignBottom="@id/edit_comment"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/icon_send"
+            android:id="@+id/imgSend"
+            />
+    </RelativeLayout>
+</RelativeLayout>
